@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Data Science *_*"
 output: github_document
 ---
 
@@ -7,24 +7,22 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## GitHub Documents
-
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-## Including Code
-
-You can include R code in the document as follows:
-
-```{r cars}
-summary(cars)
+```{r libraries, echo=FALSE}
+library(ggplot2)
+library(tidyverse)
 ```
 
-## Including Plots
+```{r plotting, echo=FALSE}
+value <- c(99.5, 0.5)
+group <- c("No", "Yes")
+work <- data_frame(value, group)
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+ggplot(work, aes(x = "", y = value, fill = group)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  labs(fill = "Is it a good idea to use a pie-chart?") +
+  theme(legend.position = "top") +
+  theme_bw()
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
