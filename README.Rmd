@@ -4,7 +4,7 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r libraries, echo=FALSE}
@@ -14,15 +14,14 @@ library(tidyverse)
 
 ```{r plotting, echo=FALSE}
 value <- c(99.5, 0.5)
-group <- c("No", "Yes")
-work <- data_frame(value, group)
+group <- c("No", "Please, don't")
+work <- tibble(value, group)
 
 ggplot(work, aes(x = "", y = value, fill = group)) +
   geom_bar(stat = "identity", width = 1) +
   coord_polar("y", start = 0) +
   labs(fill = "Is it a good idea to use a pie-chart?") +
   theme(legend.position = "top") +
-  theme_bw()
+  theme_bw() +
+  scale_color_manual(values = c("red", "blue"))
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

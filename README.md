@@ -12,10 +12,4 @@ Data Science \*\_\*
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
-    ## Warning: `data_frame()` was deprecated in tibble 1.1.0.
-    ## Please use `tibble()` instead.
-
 ![](README_files/figure-gfm/plotting-1.png)<!-- -->
-
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
